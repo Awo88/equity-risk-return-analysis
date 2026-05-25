@@ -74,4 +74,4 @@ python equity_analysis.py
 
 ---
 
-*Author: Adebola Awokoya —(2026)*
+*Author: Adebola Awokoya — (2026)*
