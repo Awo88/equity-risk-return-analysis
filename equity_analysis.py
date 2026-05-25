@@ -19,7 +19,7 @@ warnings.filterwarnings("ignore")
 # ── CONFIG ────────────────────────────────────────────────────────────────────
 
 TICKERS        = ["VG", "OGN", "COUR", "JOB", "NVAX", "HD", "NVDA", "HOOD", "F"]
-BENCHMARK      = "^GSPC"     # S&P 500
+BENCHMARK      = "^GSPC"     
 PERIOD         = "5y"
 RISK_FREE      = 0.053       # 3-month T-bill rate — update as needed
 ROLLING_WINDOW = 30          # days for rolling volatility chart
