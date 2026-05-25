@@ -74,4 +74,4 @@ python equity_analysis.py
 
 ---
 
-*Author: Adebola Awokoya — Applied Mathematics, Towson University (May 2026)*
+*Author: Adebola Awokoya — Applied Mathematics, Towson University (2026)*
