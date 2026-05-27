@@ -1,0 +1,35 @@
+name: Run & publish results
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install yfinance pandas matplotlib
+
+      - name: Run analysis
+        run: python equity_analysis.py
+
+      - name: Commit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f equity_analysis_charts.png 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "Update analysis outputs [skip ci]"
+          git push
